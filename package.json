@@ -9,9 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/naeroled/repository.git"
+    "url": "git://github.com/naerolednpm/repository.git"
   },
   "author": "LDB",
-  "license": "ISC"
-  
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "uuid": "^3.0.1"
+  }
 }

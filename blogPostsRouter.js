@@ -13,7 +13,7 @@ BlogPosts.create('Be with us', 'Let the games be with you', 'LDB', '11/21/16');
 
 //send back JSON representation of all recipes on GET requests
 router.get('/', (req, res) => {
-    res.json(blogPosts.get());
+    res.json(BlogPosts.get());
 });
 
 router.post('/', jsonParser, (req, res) => {
@@ -27,14 +27,15 @@ router.post('/', jsonParser, (req, res) => {
         }
     }
 
-    const newPost = blogPosts.create(
+    const newPost = BlogPosts.create(
         req.body.title, req.body.content, req.body.author, req.body.publishDate);
-    res.status(201).json(item);
+    res.status(201).json(newPost);
 });
 
 router.put('/:id', jsonParser, (req, res) => {
     const requiredFields = ['title', 'content', 'author', 'publishDate'];
     for (let i=0; i<requiredFields.length; i++) {
+        const field = requiredFields[i];
         if (!(field in req.body)) {
             const message = `Missing \`${field}\` in request body`
             console.error(message);
