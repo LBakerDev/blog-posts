@@ -4,8 +4,8 @@
   "description": "Practice node",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha .test"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
     "express": "^4.15.3",
     "morgan": "^1.8.2",
     "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
   }
 }
